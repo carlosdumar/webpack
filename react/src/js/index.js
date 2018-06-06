@@ -7,25 +7,11 @@ import renderToDom from './render-to-dom.js';
 import React,{ Component } from 'react';
 import { render } from 'react-dom';
 
-class Teachers extends Component {
-    render() {
-        return (
-            <ul className="Teachers">
-            </ul>
-        )
-    }
-}
+import Teachers from './components/teachers';
 
-function Teacher () {
-    return (
-        <li className="Teacher">
-            { props.name }
-            <a href={`https://twitter.com/${props.twitter}`}></a>
-            { props.twitter }
-        </li>
-    )
-}
-console.log(data);
+render(<Teachers data={data} />, document.getElementById('container'))
+
+// console.log(data);
 
 data.teachers.forEach((teacher) => {
     const element = document.createElement('li');
