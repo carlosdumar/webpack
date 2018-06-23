@@ -4,20 +4,19 @@ import platziImg from '../images/59446.jpg';
 import data from './teachers.json';
 import renderToDom from './render-to-dom.js';
 
-import React,{ Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-
-import Teachers from './components/teachers';
+import Teachers from './components/teachers.js';
 
 render(<Teachers data={data} />, document.getElementById('container'))
 
 // console.log(data);
 
-data.teachers.forEach((teacher) => {
-    const element = document.createElement('li');
-    element.textContent = teacher.Nombre;
-    renderToDom(element);
-})
+// data.teachers.forEach((teacher) => {
+//     const element = document.createElement('li');
+//     element.textContent = teacher.Nombre;
+//     renderToDom(element);
+// })
 
 document.write(firstMessage);
 delayedMessage();

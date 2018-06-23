@@ -877,11 +877,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // console.log(data);
 
-_teachers2.default.teachers.forEach(function (teacher) {
-    var element = document.createElement('li');
-    element.textContent = teacher.Nombre;
-    (0, _renderToDom2.default)(element);
-});
+// data.teachers.forEach((teacher) => {
+//     const element = document.createElement('li');
+//     element.textContent = teacher.Nombre;
+//     renderToDom(element);
+// })
 
 document.write(_message.firstMessage);
 (0, _message.delayedMessage)();
@@ -961,7 +961,7 @@ module.exports = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQE
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = {"teachers":[{"id":1,"name":"Freddy Vega","twitter":"freddier"},{"id":2,"name":"Sacha Lifszyc","twitter":"@sachalifs"},{"id":3,"name":"Julia Duque","twitter":"julian_duque"},{"id":4,"name":"Leonidas Esteban","twitter":"LeonidasEsteban"}]}
+module.exports = {"teachers":[{"name":"Freddy Vegas","twitter":"freddier"},{"name":"Sacha Lifszyc","twitter":"sachalifs"},{"name":"Julia Duque","twitter":"julian_duque"},{"name":"Leonidas Esteban","twitter":"LeonidasEsteban"}]}
 
 /***/ }),
 /* 19 */
@@ -8061,6 +8061,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
@@ -8091,13 +8093,13 @@ var Teachers = function (_Component) {
     _createClass(Teachers, [{
         key: 'render',
         value: function render() {
-            console.log(this.props.data.teachers);
+            console.log('andres: ' + this.props);
 
             return _react2.default.createElement(
                 'ul',
-                { className: 'Teachers' },
+                { className: 'teachers' },
                 this.props.data.teachers.map(function (teacherData) {
-                    return _react2.default.createElement(_teacher2.default, teacherData);
+                    return _react2.default.createElement(_teacher2.default, _extends({}, teacherData, { key: teacherData.twitter }));
                 })
             );
         }
@@ -8126,15 +8128,16 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Teacher(props) {
-    console.log('carlos: ' + props);
+    // console.log(`carloss: ${props.data}`)
     return _react2.default.createElement(
-        'li',
-        { className: 'Teacher' },
+        "li",
+        { className: "teacher" },
         props.name,
-        ' ',
+        " ",
         _react2.default.createElement(
-            'a',
-            { href: 'https://twitter.com/' + props.twitter },
+            "a",
+            { href: "https://twitter.com/" + props.twitter },
+            "@",
             props.twitter
         )
     );
