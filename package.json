@@ -18,7 +18,8 @@
     "build:video": "webpack --config ./file-loader-video/webpack.config.js",
     "build:json": "webpack --config ./json-loader/webpack.config.js",
     "build:react": "webpack --config ./react/webpack.config.js",
-    "build:sass": "webpack --config ./sass-loader/webpack.config.js"
+    "build:sass": "webpack --config ./sass-loader/webpack.config.js",
+    "build:stylus": "webpack --config ./stylus-loader/webpack.config.js"
   },
   "keywords": [
     "webpack"
@@ -35,8 +36,10 @@
     "file-loader": "^1.1.11",
     "json-loader": "^0.5.7",
     "material-ui": "^0.20.0",
+    "nib": "^1.1.2",
     "node-sass": "^4.9.0",
     "resolve-url-loader": "^2.3.0",
+    "rupture": "^0.7.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.19.1",
     "stylus": "^0.54.5",
